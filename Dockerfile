@@ -16,8 +16,6 @@ RUN apt-get update && apt-get install -y \
 
 ENV _R_SHLIB_STRIP_=true
 
-# COPY Rprofile.site /etc/R
-
 RUN install2.r --error --skipinstalled \
     shiny \
     shinyhelper \
@@ -31,14 +29,6 @@ RUN install2.r --error --skipinstalled \
     gridExtra \
     hdf5r 
 
-# copy the app directory into the image
-# COPY ./Data/shinyApps/shinyApp_Porrello_scRNAhuman/* /srv/shiny-server/
-# USER shiny
-
 EXPOSE 3838
-
-# run app
-# CMD ["/usr/bin/shiny-server"]
-# CMD ["R", "-e", "shiny::runApp('/srv/shiny-server/')"]
 
 CMD ["R", "-e", "shiny::runApp('/srv/shiny-server/', port = 3838, host = '0.0.0.0')"]
