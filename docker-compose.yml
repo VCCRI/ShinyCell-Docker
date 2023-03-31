@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  app1:
+    build: .
+    volumes:
+    # fist dataset location
+        - ./data/apps/shinyApp_MouseOrganogenesis:/srv/shiny-server
+    ports:
+        - 3838:3838
+  app2:
+    build: .
+    volumes:
+        - ./data/apps/shinyApp_Porrello_scRNAhuman:/srv/shiny-server
+    ports:
+        - 3839:3838
