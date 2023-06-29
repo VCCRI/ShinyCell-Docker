@@ -1,5 +1,4 @@
 version: '3.3'
-
 services:
   app1:
     build: .
@@ -8,9 +7,12 @@ services:
         - ./shinyApps/shinyApp_MouseOrganogenesis:/srv/shiny-server
     ports:
         - 3838:3838
-  app2:
-    build: .
-    volumes:
-        - ./shinyApps/shinyApp_Porrello_scRNAhuman:/srv/shiny-server
-    ports:
-        - 3839:3838
+  ####
+  #Uncomment if you like to run more than one app in one go
+  ####
+  # app2:
+  #   build: .
+  #   volumes:
+  #       - ./shinyApps/shinyApp_Porrello_scRNAhuman:/srv/shiny-server
+  #   ports:
+  #       - 3839:3838
