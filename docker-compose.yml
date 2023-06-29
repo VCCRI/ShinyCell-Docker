@@ -3,7 +3,7 @@ services:
   app1:
     build: .
     volumes:
-    # fist dataset location
+    ## fist dataset location
         - ./shinyApps/shinyApp_MouseOrganogenesis:/srv/shiny-server
     ports:
         - 3838:3838
@@ -13,6 +13,7 @@ services:
   # app2:
   #   build: .
   #   volumes:
+      ## dataset location
   #       - ./shinyApps/shinyApp_Porrello_scRNAhuman:/srv/shiny-server
   #   ports:
   #       - 3839:3838
